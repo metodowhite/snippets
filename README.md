@@ -1,3 +1,5 @@
 snippets
 ========
-place in: ```objc~/Library/Developer/Xcode/UserData/CodeSnippets```
+```objc 
+~/Library/Developer/Xcode/UserData/CodeSnippets 
+```
