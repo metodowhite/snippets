@@ -3,19 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>instantiate</string>
+	<string>notification</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#YourViewControllerClass#&gt; *viewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];</string>
+	<string>NSDictionary *page = @{@"currentIndex": @1};
+NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+dispatch_async(dispatch_get_main_queue(), ^{
+    [center postNotificationName:@"&lt;#notification name#&gt;" object:self userInfo:page];
+});
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>21989DB8-632C-4AA8-86CA-7BAD15CD36C5</string>
+	<string>3A095786-3ACB-46F5-816C-FE9B046126E0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>instantiate storyboard scene</string>
+	<string>Notification with parameters</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

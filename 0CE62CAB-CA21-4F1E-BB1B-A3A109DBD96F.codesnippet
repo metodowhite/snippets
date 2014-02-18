@@ -2,20 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>instantiate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#YourViewControllerClass#&gt; *viewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];</string>
+	<string> AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"&lt;#string#&gt;"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate / 4.0f;
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"]; // defaults to your system language
+    [synthesizer speakUtterance:utterance];
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>21989DB8-632C-4AA8-86CA-7BAD15CD36C5</string>
+	<string>0CE62CAB-CA21-4F1E-BB1B-A3A109DBD96F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>instantiate storyboard scene</string>
+	<string>AVSpeechSynthesizer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

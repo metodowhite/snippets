@@ -2,20 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>instantiate</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeBlock</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#YourViewControllerClass#&gt; *viewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];</string>
+	<string>+ (instancetype)shared
+{
+    static id shared;
+    static dispatch_once_t token;
+    dispatch_once(&amp;token, ^{
+        shared = [[self alloc] init];
+    });
+    return shared;
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>21989DB8-632C-4AA8-86CA-7BAD15CD36C5</string>
+	<string>9E64DA93-52E3-4D03-A401-A28B27FC41A5</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>instantiate storyboard scene</string>
+	<string>Singleton</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
